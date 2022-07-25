@@ -36,7 +36,7 @@ HiBenchEnvPropMappingMandatory = dict(
     REDUCER_CONFIG_NAME="hibench.hadoop.reducer.name",
     MAP_CONFIG_NAME="hibench.hadoop.mapper.name",
     MASTERS="hibench.masters.hostnames",
-    SLAVES="hibench.slaves.hostnames",
+    SLAVES="hibench.slaves.hostnames"
 )
 
 HiBenchEnvPropMapping = dict(
@@ -237,8 +237,8 @@ HiBenchEnvPropMapping = dict(
     HIBENCH_FLINK_MASTER="hibench.flink.master",
     FLINK_HOME="hibench.streambench.flink.home",
     STREAMBENCH_FLINK_JAR="hibench.streambench.flinkbench.jar",
-    STREAMBENCH_FLINK_PARALLELISM="hibench.streambench.flink.parallelism",
+    STREAMBENCH_FLINK_PARALLELISM="hibench.streambench.flink.parallelism"
 )
 
-HiBenchPropEnvMapping = dict([(v,k) for k, v in HiBenchEnvPropMapping.items()])
-HiBenchPropEnvMappingMandatory = dict([(v,k) for k, v in HiBenchEnvPropMappingMandatory.items()])
+HiBenchPropEnvMapping = dict([(v,k) for k, v in list(HiBenchEnvPropMapping.items())])
+HiBenchPropEnvMappingMandatory = dict([(v,k) for k, v in list(HiBenchEnvPropMappingMandatory.items())])
