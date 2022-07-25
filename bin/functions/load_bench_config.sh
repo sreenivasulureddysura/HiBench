@@ -19,7 +19,7 @@ this="${BASH_SOURCE-$0}"
 bin=$(cd -P -- "$(dirname -- "$this")" && pwd -P)
 script="$(basename -- "$this")"
 this="$bin/$script"
-echo "data $bin/$script"
+# echo "data $bin/$script"
 # include function interfaces for workload
 . ${bin}/workload_functions.sh
 
