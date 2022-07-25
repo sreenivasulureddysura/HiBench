@@ -22,6 +22,7 @@ import subprocess
 import sys
 import time
 import urllib
+import logging
 from collections import defaultdict
 from contextlib import closing
 
@@ -244,6 +245,8 @@ def load_config(conf_root, workload_config_file, workload_folder, patching_confi
 
 def check_config():  # check configures
     # Ensure mandatory configures are available
+    logging.info("--------------------")
+    logging.info(HiBenchEnvPropMappingMandatory.items(), HibenchConf)
     for _, prop_name in HiBenchEnvPropMappingMandatory.items():
         print("HIIIIIIIII", prop_name, HibenchConf.get(prop_name, None))
         print(HiBenchEnvPropMappingMandatory.items())
