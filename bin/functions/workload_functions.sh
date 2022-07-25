@@ -34,6 +34,8 @@ function enter_bench(){		# declare the entrance of a workload
     shift 3
     patching_args=$@
     echo "patching args=$patching_args"
+    echo "HIIIIIIIII"
+    echo "${workload_func_bin} ${HIBENCH_CONF_FOLDER} $workload_config_file $workload_folder $patching_args"
     local CONF_FILE=`${workload_func_bin}/load_config.py ${HIBENCH_CONF_FOLDER} $workload_config_file $workload_folder $patching_args`
     . $CONF_FILE
 }

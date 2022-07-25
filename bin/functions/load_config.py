@@ -33,7 +33,7 @@ HibenchConf = {}
 HibenchConfRef = {}
 
 # FIXME: use log helper later
-
+print("HIIIIIIIII0", HibenchConf, HiBenchEnvPropMapping.items())
 
 def log(*s):
     if len(s) == 1:
@@ -189,7 +189,7 @@ def override_conf_from_environment():
         # itself set an env variable to a hibench conf
         if env_name in os.environ and (
             not HibenchConf.get(
-                prop_name,
+                prop_name
             )
             or HibenchConf.get(prop_name) == "$" + env_name
         ):
@@ -245,7 +245,7 @@ def load_config(conf_root, workload_config_file, workload_folder, patching_confi
 def check_config():  # check configures
     # Ensure mandatory configures are available
     for _, prop_name in HiBenchEnvPropMappingMandatory.items():
-        print("HIIIIIIIII", HibenchConf.get(prop_name))
+        print("HIIIIIIIII", prop_name, HibenchConf.get(prop_name, None))
         print(HiBenchEnvPropMappingMandatory.items())
         assert HibenchConf.get(prop_name, None) is not None, (
             "Mandatory configure missing: %s" % prop_name
