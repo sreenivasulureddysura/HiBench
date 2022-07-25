@@ -90,7 +90,6 @@ def execute_cmd(cmdline, timeout):
     ):  # Monitor process
         time.sleep(0.1)  # Wait a little
         seconds_passed = time.time() - t_begin
-
         stdout += str(nonBlockRead(p.stdout) or "")
         stderr += str(nonBlockRead(p.stderr) or "")
 
