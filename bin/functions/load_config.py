@@ -678,7 +678,7 @@ def probe_masters_slaves_hostnames():
     # reset hostnames according to gethostbyaddr
     names = set(
         HibenchConf["hibench.masters.hostnames"].split()
-        + HibenchConf["hibench.slaves.hostnames"].split(),
+        + HibenchConf["hibench.slaves.hostnames"].split()
     )
     new_name_mapping = {}
     for name in names:
@@ -691,16 +691,16 @@ def probe_masters_slaves_hostnames():
             [
                 new_name_mapping[x]
                 for x in HibenchConf["hibench.masters.hostnames"].split()
-            ],
-        ),
+            ]
+        )
     )
     HibenchConf["hibench.slaves.hostnames"] = repr(
         " ".join(
             [
                 new_name_mapping[x]
                 for x in HibenchConf["hibench.slaves.hostnames"].split()
-            ],
-        ),
+            ]
+        )
     )
 
 
@@ -860,6 +860,7 @@ if __name__ == "__main__":
         patching_config = sys.argv[4]
     else:
         patching_config = ""
+    log(f"{conf_root}, {workload_configFile}, {workload_folder}, {patching_config}")
     load_config(
         conf_root,
         workload_configFile,
